@@ -33,6 +33,10 @@ function generatePassword(lower, number, symbol, upper, length) {
     let password = '';    
     if(!lower && !number && !symbol && !upper) alert("Mark at least one option")
     for(let i=0; i<length; i++ ){
+        if(length < 8) {
+            alert('Password must be 8-20 charecter');
+            break;
+        }
         if(lower) password += getRandomLower();
         if(number) password += getRandomNumber();
         if(symbol) password += getRandomSymbol();
